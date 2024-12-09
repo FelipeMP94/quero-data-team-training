@@ -3,8 +3,7 @@ from dotenv import load_dotenv
 import requests 
 import json
 
-
-url = "https://api.stockdata.org/v1/data/eod"
+url = "https://api.stockdata.org/v1/data/intraday"
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
