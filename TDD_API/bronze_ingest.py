@@ -10,8 +10,8 @@ API_KEY = os.getenv("API_KEY")
 
 stocks = ["AAPL","AMZN","UNH","TSLA","NVDA","GOOG"," META","INTR","TSM","NFLX "]
 
-start_date =  "2024-12-01"
-end_date = "2024-12-11"
+start_date =  "2024-11-03"
+end_date = "2024-11-16"
 
 all_stocks = []
 def main():
