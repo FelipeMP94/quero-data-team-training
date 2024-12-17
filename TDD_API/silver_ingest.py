@@ -15,7 +15,7 @@ for i in range(len(dados)):
         dados[i]['data'][j]['symbol'] = stocks[i]
     dados_total = dados_total + dados[i]['data']
 
-print(dados[i]['data'])
 table = pd.DataFrame(data = dados_total)
-print(table.columns)
-print(len(table))                            
+table.to_parquet("silver/stocks_silver.parquet")
+
+                         
