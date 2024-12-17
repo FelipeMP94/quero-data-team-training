@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 import requests 
 import json
 
-url = "https://api.stockdata.org/v1/data/intraday"
+url = "https://api.stockdata.org/v1/data/eod"
 load_dotenv()
 API_KEY = os.getenv("API_KEY")
 
@@ -17,7 +17,10 @@ def main():
     for stock in stocks:
         params = {"api_token": API_KEY,"symbols": stock,"date_from":start_date,"date_to":end_date }
         response = requests.get( url,params=params)
-        all_stocks.append(response.text)
+        data = response.json()
+        all_stocks.append(data)
+    print(all_stocks)
+    print(type(all_stocks))
     with open('bronze/stocks_bronze.json', "w", encoding="utf-8") as arquivo:
         json.dump(all_stocks, arquivo, ensure_ascii=False, indent=4)
 
